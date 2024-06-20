@@ -59,15 +59,15 @@ jobs:
         mv ./dist/nodai_shark_studio.exe ./dist/nodai_shark_studio_${{ env.package_version_ }}.exe
         # signtool sign /f c:\g\shark_02152023.cer /fd certHash /csp "eToken Base Cryptographic Provider" /k "${{ secrets.CI_CERT }}" ./dist/nodai_shark_studio_${{ env.package_version_ }}.exe
   
-    - name: Upload Release Assets
-      id: upload-release-assets
-      uses: dwenegar/upload-release-assets@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.NODAI_INVOCATION_TOKEN }}
-      with:
-        release_id: ${{ steps.create_release.outputs.id }}
-        assets_path: ./dist/nodai*
-        #asset_content_type: application/vnd.microsoft.portable-executable 
+    #- name: Upload Release Assets
+    #  id: upload-release-assets
+    #  uses: dwenegar/upload-release-assets@v1
+    #  env:
+    #    GITHUB_TOKEN: ${{ secrets.NODAI_INVOCATION_TOKEN }}
+    #  with:
+    #    release_id: ${{ steps.create_release.outputs.id }}
+    #    assets_path: ./dist/nodai*
+    #    #asset_content_type: application/vnd.microsoft.portable-executable 
 
     #- name: Publish Release
     #  id: publish_release
@@ -86,6 +86,6 @@ jobs:
       with:
         commit: "${{github.sha}}"
         tag: "tag-${{github.sha}}"
-        artifacts: "dist/*.exe"
+        artifacts: "dist/nodai*"
 #        bodyFile: "readme.md"
         body: "Automatic release"
