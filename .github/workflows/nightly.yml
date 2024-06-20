@@ -34,18 +34,18 @@ jobs:
         echo "package_version_=$package_version_" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf8 -Append
         echo "tag_name=$tag_name" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf8 -Append
 
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.NODAI_INVOCATION_TOKEN }}
-      with:
-        tag_name: ${{ env.tag_name }}
-        release_name: nod.ai SHARK ${{ env.tag_name }}
-        body: |
-          Automatic snapshot release of nod.ai SHARK.
-        draft: true
-        prerelease: true
+    #- name: Create Release
+    #  id: create_release
+    #  uses: actions/create-release@v1
+    #  env:
+    #    GITHUB_TOKEN: ${{ secrets.NODAI_INVOCATION_TOKEN }}
+    #  with:
+    #    tag_name: ${{ env.tag_name }}
+    #    release_name: nod.ai SHARK ${{ env.tag_name }}
+    #    body: |
+    #      Automatic snapshot release of nod.ai SHARK.
+    #    draft: true
+    #    prerelease: true
 
     - name: Build Package 
       shell: powershell
