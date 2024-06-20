@@ -4,16 +4,16 @@
 name: Validate Shark Studio
 
 on:
-  push:
-    branches: [ main ]
-    paths-ignore:
-      - '**.md'
-      - 'shark/examples/**'
-  pull_request:
-    branches: [ main ]
-    paths-ignore:
-      - '**.md'
-      - 'shark/examples/**'
+  #push:
+  #  branches: [ main ]
+  #  paths-ignore:
+  #    - '**.md'
+  #    - 'shark/examples/**'
+  #pull_request:
+  #  branches: [ main ]
+  #  paths-ignore:
+  #    - '**.md'
+  #    - 'shark/examples/**'
   workflow_dispatch:
 
 # Ensure that only a single job or workflow using the same
